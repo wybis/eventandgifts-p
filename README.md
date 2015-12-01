@@ -1,2 +1,2 @@
-# wybis-prototype
-Wybis Prototype
+# wybis-eag-p
+Wybis EAG-P
