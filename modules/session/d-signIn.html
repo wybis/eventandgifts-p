@@ -1,0 +1,24 @@
+<md-content class="md-padding" layout="column" layout-align="left center">
+<!--
+	<div layout="column" layout-padding layout-align="center center">
+-->
+		<md-subheader class="md-warn" ng-hide="vm.message === null">{{vm.message}} </md-subheader>
+		<md-input-container class="md-icon-float">
+			<label>User Id</label>
+			<ng-md-icon icon="person"></ng-md-icon>
+			<input type="text" ng-model="vm.user.userId"/>
+		</md-input-container>
+		<md-input-container class="md-icon-float">
+			<label>Password</label>
+			<ng-md-icon icon="lock"></ng-md-icon>
+			<input type="password" ng-model="vm.user.password"/>
+		</md-input-container>
+		<md-button class="md-raised md-primary" ng-click="vm.signIn()">
+			<ng-md-icon icon="login"></ng-md-icon> Sign In
+		</md-button>
+		<p>Lost your password? Reset your password from <a href="#/reset-password">here</a>!</p>
+		<p>Do not have an account yet? <a href="#/sign-up">Register</a> and become member!</p>
+<!--
+	</div>
+-->
+</md-content>

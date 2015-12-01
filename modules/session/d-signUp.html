@@ -1,0 +1,35 @@
+<md-content class="md-padding" layout="column" layout-align="left center">
+    <!--
+    <div layout="column" layout-padding layout-align="center center">
+    -->
+        <md-input-container class="md-icon-float">
+            <label>User Id</label>
+            <ng-md-icon icon="person"></ng-md-icon>
+            <input type="text" ng-model="user.userId"/>
+        </md-input-container>
+        <md-input-container class="md-icon-float">
+            <label>Password</label>
+            <ng-md-icon icon="lock"></ng-md-icon>
+            <input type="password" ng-model="user.password"/>
+        </md-input-container>
+        <md-input-container class="md-icon-float">
+            <label>Retype Password</label>
+            <ng-md-icon icon="lock"></ng-md-icon>
+            <input type="password" ng-model="user.retypePassword"/>
+        </md-input-container>
+        <md-input-container class="md-icon-float">
+            <label>First Name</label>
+            <input type="text" ng-model="user.firstName"/>
+        </md-input-container>
+        <md-input-container class="md-icon-float">
+            <label>Last Name</label>
+            <input type="text" ng-model="user.lastName"/>
+        </md-input-container>
+        <md-button class="md-raised md-primary" ng-click="signUp()">
+            <ng-md-icon icon="login"></ng-md-icon> Sign Up
+        </md-button>
+        <p>Already a Member? <a href="#/sign-in">Sign In</a> here.</p>
+    <!--
+    </div>
+    -->
+</md-content>

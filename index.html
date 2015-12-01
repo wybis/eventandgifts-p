@@ -1,18 +1,164 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app" ng-controller="rootController">
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
     <title>Wybis-EAG-P</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
     <!--
-    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="bower_components/skeleton/css/normalize.css">
-    <link rel="stylesheet" href="bower_components/skeleton/css/skeleton.css">
-    <link rel="stylesheet" href="modules/smartPayment.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     -->
-</head>
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="bower_components/angular-material-icons/angular-material-icons.css">
+    <link rel="stylesheet" href="bower_components/angular-material-data-table/dist/md-data-table.min.css"/>
 
-<body>
-    <h1>Welcome to Wybis EAG-P</h1>
+    <link rel="stylesheet" href="modules/default.css" />
+</head>
+<body layout="column">
+
+<md-toolbar layout="row">
+    <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" hide-gt-md ng-click="toggleSideNavBar('left')">
+            <ng-md-icon aria-label="Menu" icon="menu"></ng-md-icon>
+        </md-button>
+        <h1 hide-sm>Wybis-EAG-P</h1>
+        <span flex></span>
+        <h3>{{viewName}}</h3>
+        <span flex></span>
+        <md-button ng-href="#/sign-up" hide-gt-md>
+            Sign Up
+        </md-button>
+        <md-button ng-href="#/sign-in" hide-gt-md>
+            <ng-md-icon aria-label="More" icon="login"></ng-md-icon> Sign In
+        </md-button>
+    </div>
+</md-toolbar>
+
+<div layout="row" flex>
+
+    <md-sidenav class="md-sidenav-left md-whiteframe-z2" layout="column" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+        <md-toolbar hide-gt-md>
+            <span flex></span>
+            <div layout="column" class="md-toolbar-tools-bottom">
+                <h1 class="md-headline">Event And Gifts</h1>
+            </div>
+        </md-toolbar>
+        <md-list>
+            <md-item>
+                <a href="#/home">
+                    <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                        <div class="inset">
+                            <ng-md-icon icon="home"></ng-md-icon>
+                        </div>
+                        <div class="inset">Home</div>
+                    </md-item-content>
+                </a>
+            </md-item>
+            <md-item>
+                <a href="#/sign-in">
+                    <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                        <div class="inset">
+                            <ng-md-icon icon="login"></ng-md-icon>
+                        </div>
+                        <div class="inset">Sign In</div>
+                    </md-item-content>
+                </a>
+            </md-item>
+            <md-item>
+                <a href="#/sign-up">
+                    <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                        <div class="inset">
+                            <ng-md-icon icon="signup"></ng-md-icon>
+                        </div>
+                        <div class="inset">Sign Up</div>
+                    </md-item-content>
+                </a>
+            </md-item>
+            <md-divider></md-divider>
+            <md-item>
+                <a href="#/contact">
+                    <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                        <div class="inset">
+                            <ng-md-icon icon="contact"></ng-md-icon>
+                        </div>
+                        <div class="inset">Contact Us</div>
+                    </md-item-content>
+                </a>
+            </md-item>
+            <md-item>
+                <a href="#/about">
+                    <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                        <div class="inset">
+                            <ng-md-icon icon="about"></ng-md-icon>
+                        </div>
+                        <div class="inset">About</div>
+                    </md-item-content>
+                </a>
+            </md-item>
+            <md-item>
+                <a href="#/terms">
+                    <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                        <div class="inset">
+                            <ng-md-icon icon="terms"></ng-md-icon>
+                        </div>
+                        <div class="inset">Terms</div>
+                    </md-item-content>
+                </a>
+            </md-item>
+            <md-divider></md-divider>
+            <md-item>
+                <a href="#/uibed">
+                    <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                        <div class="inset">
+                            <ng-md-icon icon="uibed"></ng-md-icon>
+                        </div>
+                        <div class="inset">UI Bed</div>
+                    </md-item-content>
+                </a>
+            </md-item>
+        </md-list>
+    </md-sidenav>
+
+    <div id="content" flex md-scroll-y>
+        <x-ng-view></x-ng-view>
+    </div>
+
+</div>
+
+<script src="bower_components/lodash/lodash.min.js"></script>
+<script src="bower_components/moment/min/moment.min.js"></script>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-route/angular-route.min.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="bower_components/angular-aria/angular-aria.min.js"></script>
+<script src="bower_components/angular-material/angular-material.min.js"></script>
+
+<script src="bower_components/angular-material-icons/angular-material-icons.min.js"></script>
+<script src="bower_components/angular-material-data-table/dist/md-data-table.min.js"></script>
+
+<script src="bower_components/ngstorage/ngStorage.min.js"></script>
+<script src="bower_components/jquery.inputmask/dist/jquery.inputmask.bundle.min.js"></script>
+<script src="bower_components/angular-inputmask/src/green.inputmask4angular.js"></script>
+
+<script src="modules/init.js"></script>
+<script src="modules/common.js"></script>
+<script src="modules/wydNotify/wydNotifyByMaterial.js"></script>
+<script src="modules/controllers.js"></script>
+
+<script src="modules/home/indexController.js"></script>
+<script src="modules/session/signInController.js"></script>
+<script src="modules/session/resetPasswordController.js"></script>
+<script src="modules/session/signUpController.js"></script>
+<script src="modules/uibed/uibedController.js"></script>
+
+<script src="modules/index.js"></script>
+
 </body>
 </html>

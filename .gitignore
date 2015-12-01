@@ -1,0 +1,6 @@
+!.gitkeep
+.gradle
+.idea
+build/*
+out/*
+

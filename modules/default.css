@@ -1,0 +1,21 @@
+.md-toolbar-tools h1 {
+    font-size: inherit;
+    font-weight: inherit;
+    margin: inherit;
+}
+
+md-toast.md-info-toast-theme {
+    background-color: blue;
+}
+
+md-toast.md-success-toast-theme {
+    background-color: green;
+}
+
+md-toast.md-warning-toast-theme {
+    background-color: orange;
+}
+
+md-toast.md-error-toast-theme {
+    background-color: red;
+}

@@ -1,0 +1,56 @@
+<md-content class="md-padding" ng-show="vm.uiState.isReady">
+
+    <div>
+        <md-button class="md-raised"
+                   ng-click="vm.simulateInvalidSession()">
+            Simulate Invalid Session
+        </md-button>
+
+        <md-button class="md-raised"
+                   ng-click="vm.showInfo()">
+            Info
+        </md-button>
+
+        <md-button class="md-raised md-primary"
+                   ng-click="vm.showSuccess()">
+            Success
+        </md-button>
+
+        <md-button class="md-raised md-accent"
+                   ng-click="vm.showWarning()">
+            Warning
+        </md-button>
+
+        <md-button class="md-raised md-warn"
+                   ng-click="vm.showError()">
+            Error
+        </md-button>
+        <md-menu md-position-mode="target-right target">
+            <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                More
+            </md-button>
+            <md-menu-content width="4">
+                <md-menu-item>
+                    <md-button>
+                        View Event
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button>
+                        Edit Event
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button>
+                        Contribute To Event
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button>
+                        Contributions
+                    </md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+    </div>
+</md-content>
